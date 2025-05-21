@@ -19,6 +19,13 @@ sub startup {
     # Load configuration from hash returned by config file
     $self->plugin('Config');
 
+    # Logging
+    my $log_config = $self->config->{log} || {};
+    $self->log(Mojo::Log->new(
+        level => $log_config->{level} // 'warn',
+        $log_config->{path} ? (path => $log_config->{path}) : (),
+    ));
+
     # OAuth2    
     $self->plugin('OAuth2', {
         google => {

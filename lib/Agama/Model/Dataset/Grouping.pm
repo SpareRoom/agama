@@ -16,7 +16,7 @@ sub load {
     my ($self) = @_;
 
     my $row = $self->dbh->selectrow_hashref(
-        "SELECT * FROM grouping WHERE id = ?",
+        "SELECT * FROM `grouping` WHERE id = ?",
         {Slice => {}},
         $self->id,
     );

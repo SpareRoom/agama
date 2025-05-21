@@ -75,7 +75,7 @@ sub _build_groupings {
     my $rows = $self->dbh->selectall_arrayref(
         q{
             SELECT *
-              FROM grouping
+              FROM `grouping`
              WHERE dataset_id = ?
                AND status != 'disabled'
           ORDER BY name
