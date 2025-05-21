@@ -36,4 +36,8 @@
             secret => 'YOUR_GOOGLE_OAUTH2_SECRET',
         },
     },
+    log => {
+        path  => 'PATH_TO_YOUR_LOGFILE',
+        level => 'debug',
+    },
 }
