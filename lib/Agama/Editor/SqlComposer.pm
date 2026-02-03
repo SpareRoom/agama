@@ -142,7 +142,7 @@ sub query_statement {
     $statement =~ s/\$where/"WHERE 1 ".$self->_query_where($query)/ge;
 
     # limit
-    $statement .= "\nLIMIT 1000";
+    $statement .= "\nLIMIT 2000";
 
     # cleanup
     $statement =~ s/\n+/\n/g;
